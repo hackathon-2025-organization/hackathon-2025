@@ -15,7 +15,7 @@ git clone <url>
 cd hackathon-2025
 ```
 
-### 2️⃣ Создать свою ветку (НЕ пушьте в main!)
+### 2️⃣ Создать свою ветку
 ```bash
 git checkout -b feature/<your-name>
 # например: git checkout -b feature/vova-frontend
@@ -44,25 +44,20 @@ git push origin feature/<your-name>
 - идите на GitHub, создайте PR в main
 - Макс проверит и смержит
 
-### 7️⃣ Запустить всё вместе
-```bash
-docker-compose up --build
-```
-Откроется: фронт на localhost:3000, бек на localhost:4000, ии бек на localhost:8000
-
 ---
 
 ## Важные моменты
-- **node_modules/, .venv/, .env** — уже в .gitignore, не коммитьте
-- **приватные ключи** — пушьте смело в репу, она приватная (OPEN_AI_KEY и т.д.)
+- **main** — protected ветка, пушить напрямую (в обход создания пул реквеста) не получится
+- **node_modules/, .venv/, .env** — уже в .gitignore
 - **Docker networking:** в docker-compose контейнеры общаются по имени сервиса, НЕ по localhost
   - backend общается с ai-backend по: `http://ai-backend:8000` (не localhost!)
   - localhost работает только когда ты запускаешь контейнер локально и обращаешься с хоста
-- **логи контейнеров:** `docker-compose logs -f`
+- **запустить всё вместе:** `docker-compose up --build`
 - **остановить контейнеры:** `docker-compose down`
+- **логи контейнеров:** `docker-compose logs -f`
 
 ## Общее напутствие
-- команда не ждёт что вы будете рвать жопу, вы также не ждёте этого от других
+- команда не ждёт что вы будете рвать жопу ради победы, вы также не ждёте этого от команды
 - всем похер на то как написан код
 - задача — криво косо сделать минимально рабочий прототип
 - пишите код через ии — он умнее чем все мы, быстрее через терминал, например [Gemini CLI](https://github.com/google-gemini/gemini-cli?tab=readme-ov-file#-installation) (бесплатно)
