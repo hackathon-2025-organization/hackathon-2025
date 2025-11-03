@@ -1,9 +1,9 @@
 # Читать обязательно
 
 ## Команды и стек
-- **frontend** (Вова, Марк): Next.js → порт 1000
-- **backend** (Макс, Даня): Nest.js → порт 2000
-- **ai-backend** (Илья): FastAPI → порт 3000
+- **frontend** (Вова, Марк): Next.js → порт 3000
+- **backend** (Макс, Даня): Nest.js → порт 4000
+- **ai-backend** (Илья): FastAPI → порт 8000
 
 ---
 
@@ -29,7 +29,7 @@ git checkout -b feature/<your-name>
 ```bash
 cd <your-folder>  # например: cd backend
 docker build -t hackathon-backend .
-docker run -p 2000:2000 hackathon-backend
+docker run -p 4000:4000 hackathon-backend
 ```
 Если контейнер запустился без ошибок — всё окей.
 
@@ -48,7 +48,7 @@ git push origin feature/<your-name>
 ```bash
 docker-compose up --build
 ```
-Откроется: фронт на localhost:1000, бек на localhost:2000, ии бек на localhost:3000
+Откроется: фронт на localhost:3000, бек на localhost:4000, ии бек на localhost:8000
 
 ---
 
@@ -56,7 +56,7 @@ docker-compose up --build
 - **node_modules/, .venv/, .env** — уже в .gitignore, не коммитьте
 - **приватные ключи** — пушьте смело в репу, она приватная (OPEN_AI_KEY и т.д.)
 - **Docker networking:** в docker-compose контейнеры общаются по имени сервиса, НЕ по localhost
-  - backend общается с ai-backend по: `http://ai-backend:3000` (не localhost!)
+  - backend общается с ai-backend по: `http://ai-backend:8000` (не localhost!)
   - localhost работает только когда ты запускаешь контейнер локально и обращаешься с хоста
 - **логи контейнеров:** `docker-compose logs -f`
 - **остановить контейнеры:** `docker-compose down`
