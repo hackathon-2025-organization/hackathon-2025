@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./frontend
+    container_name: hackathon-frontend
+    ports:
+      - "1000:1000"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - hackathon-network
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    container_name: hackathon-backend
+    ports:
+      - "2000:2000"
+    environment:
+      - NODE_ENV=production
+      - AI_BACKEND_URL=http://ai-backend:3000
+    networks:
+      - hackathon-network
+    depends_on:
+      - ai-backend
+
+  ai-backend:
+    build: ./ai-backend
+    container_name: hackathon-ai-backend
+    ports:
+      - "3000:3000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - hackathon-network
+
+networks:
+  hackathon-network:
+    driver: bridge
