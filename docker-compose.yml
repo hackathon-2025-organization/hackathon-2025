@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   frontend:
@@ -7,6 +7,7 @@ services:
     ports:
       - "1000:1000"
     environment:
+      - PORT=1000
       - NODE_ENV=production
     networks:
       - hackathon-network
@@ -19,8 +20,8 @@ services:
     ports:
       - "2000:2000"
     environment:
+      - PORT=2000
       - NODE_ENV=production
-      - AI_BACKEND_URL=http://ai-backend:3000
     networks:
       - hackathon-network
     depends_on:
@@ -32,6 +33,7 @@ services:
     ports:
       - "3000:3000"
     environment:
+      - PORT=3000
       - PYTHONUNBUFFERED=1
     networks:
       - hackathon-network
