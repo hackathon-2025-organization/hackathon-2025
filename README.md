@@ -66,3 +66,6 @@ docker-compose up --build
 - всем похер на то как написан код
 - задача — криво косо сделать минимально рабочий прототип
 - пишите код через ии — он умнее чем все мы, быстрее через терминал, например [Gemini CLI](https://github.com/google-gemini/gemini-cli?tab=readme-ov-file#-installation) (бесплатно)
+
+
+Test-main commit
