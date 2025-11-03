@@ -68,4 +68,4 @@ docker-compose up --build
 - пишите код через ии — он умнее чем все мы, быстрее через терминал, например [Gemini CLI](https://github.com/google-gemini/gemini-cli?tab=readme-ov-file#-installation) (бесплатно)
 
 
-Test-main commit
+TESTTEST
