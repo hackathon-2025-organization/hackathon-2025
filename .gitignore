@@ -44,11 +44,10 @@ env/
 *~
 .DS_Store
 
-# ПРОПУСКАЕМ ЧТОБ ОБЛЕГЧИТЬ СЕБЕ ЖИЗНЬ
 # Environment
-#.env
-#.env.local
-#.env.*.local
+.env
+.env.local
+.env.*.local
 
 # OS
 Thumbs.db
